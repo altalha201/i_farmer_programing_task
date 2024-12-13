@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../../presentation/features/home/screens/home_page.dart';
+import '../../presentation/service/splash/splash_screen.dart';
+import '../config/configs.dart';
 
 class OMDBMovies extends StatelessWidget {
   const OMDBMovies({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'OMDB Movies',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: StateConfig.providers,
+      child: MaterialApp(
+        title: 'OMDb Movies',
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeConfig.themeMode,
+        theme: ThemeConfig.theme,
+        home: const SplashScreen(),
       ),
-      home: const HomePage(),
     );
   }
 }
