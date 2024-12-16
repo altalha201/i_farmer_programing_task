@@ -17,8 +17,8 @@ class VerticalListItem extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: InkWell(
-            onTap: () async {
-              await RoutingConfig.of(context).goToDetails(item.imdbID ?? "");
+            onTap: () {
+              RoutingConfig.of(context).goToDetails(item.imdbID ?? "");
             },
             child: ContentDetailsRow(item: item),
           ),

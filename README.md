@@ -41,6 +41,7 @@ Note: If you want to use your own HLS or DASH playback URL, feel free to do so.
 
 ## Project Structure
 
+````
 lib
     |- main.dart
     |- src
@@ -48,3 +49,4 @@ lib
         |- data // Will contain data source and repository 
         |- domain // All the business logic
         |- presentation // UI and state management
+````

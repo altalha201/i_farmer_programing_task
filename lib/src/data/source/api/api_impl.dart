@@ -4,9 +4,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../core/config/error_config.dart';
-import '../../../core/config/logger_config.dart';
-import '../../../core/config/secrets_config.dart';
+import '../../../core/config/configs.dart';
 import '../../../core/constants/api_params.dart';
 import 'api_source.dart';
 

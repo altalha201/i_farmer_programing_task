@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/config/configs.dart';
 import '../../common/widgets/common_text_widget.dart';
+import '../../features/home/provider/home_providers.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,10 +17,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3)).then((_) {
-      RoutingConfig.of(context).goToHome(clearAll: true);
-    });
     super.initState();
+    WidgetsFlutterBinding.ensureInitialized().addPostFrameCallback((_) async {
+      await context.read<DashboardStateProvider>().init();
+      Future.delayed(const Duration(seconds: 3)).then((_) {
+        RoutingConfig.of(context).goToHome(clearAll: true);
+      });
+    });
   }
 
   @override

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/error_config.dart';
-import '../../../../core/config/logger_config.dart';
-import '../../../../core/config/toast_config.dart';
+import '../../../../core/config/configs.dart';
 import '../../../../domain/entity/search_entity.dart';
 import '../../../../domain/use_case/search_for_title_marvel.dart';
 

@@ -8,8 +8,7 @@ import '../../domain/repository/omdb_repository.dart';
 import '../../domain/repository/video_repository.dart';
 import '../../domain/use_case/use_cases.dart';
 import '../../presentation/features/details/provider/details_state_provider.dart';
-import '../../presentation/features/home/provider/home_state_provider.dart';
-import '../../presentation/features/home/provider/list_tab_state_provider.dart';
+import '../../presentation/features/home/provider/home_providers.dart';
 
 class StateConfig {
   static final ApiSource _api = ApiImpl();
@@ -21,6 +20,7 @@ class StateConfig {
       SearchForTitleMarvel(repository: _omdbRepo);
   static final GetVideoUrl _getVideoUrl = GetVideoUrl(_videoRepository);
   static final GetFullDetails _getFullDetails = GetFullDetails(_omdbRepo);
+  static final GetBatmanContent _batmanContent = GetBatmanContent(_omdbRepo);
 
   static List<SingleChildWidget> get providers => [
         ChangeNotifierProvider<HomeStateProvider>(
@@ -30,6 +30,9 @@ class StateConfig {
           create: (_) => ListTabStateProvider(
             titleMarvel: _titleMarvel,
           ),
+        ),
+        ChangeNotifierProvider<DashboardStateProvider>(
+          create: (_) => DashboardStateProvider(_batmanContent),
         ),
         ChangeNotifierProvider(
           create: (_) => DetailsStateProvider(
