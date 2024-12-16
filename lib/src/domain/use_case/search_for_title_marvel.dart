@@ -1,12 +1,12 @@
 import '../../core/config/use_case_config.dart';
 import '../../core/constants/api_params.dart';
 import '../entity/search_response.dart';
-import '../repository/search_repository.dart';
+import '../repository/omdb_repository.dart';
 
 class SearchForTitleMarvel implements UseCase<SearchResponse, int> {
-  final SearchRepository _repository;
+  final OMDbRepository _repository;
 
-  SearchForTitleMarvel({required SearchRepository repository}) : _repository = repository;
+  SearchForTitleMarvel({required OMDbRepository repository}) : _repository = repository;
 
   @override
   Future<SearchResponse> execute(int params) async {

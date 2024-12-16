@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/config/assets_config.dart';
+import '../../../core/config/configs.dart';
 
 class Poster extends StatelessWidget {
   const Poster({
@@ -19,7 +19,7 @@ class Poster extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
-          image: posterUrl.isEmpty
+          image: posterUrl.isEmpty || posterUrl.isNotAvailable
               ? AssetImage(AssetsConfig.images.kNoPoster)
               : NetworkImage(posterUrl),
           fit: BoxFit.cover,

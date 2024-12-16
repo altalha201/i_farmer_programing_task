@@ -42,7 +42,7 @@ class _ListTabState extends State<ListTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Marvel Movies"),
+        title: const Text("Marvel"),
       ),
       body: Consumer<ListTabStateProvider>(
         builder: (context, stateProvider, _) {

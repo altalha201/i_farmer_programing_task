@@ -12,7 +12,7 @@ class TitleTextStyle extends TextStyle {
   FontWeight? get fontWeight => FontWeight.w700;
 
   @override
-  Color? get color => ColorConfig.kWhite;
+  Color? get color => super.color ?? ColorConfig.kWhite;
 }
 
 class TagTextStyle extends TextStyle {
@@ -25,18 +25,18 @@ class TagTextStyle extends TextStyle {
   FontWeight? get fontWeight => FontWeight.w500;
 
   @override
-  Color? get color => ColorConfig.kWhite;
+  Color? get color => super.color ?? ColorConfig.kWhite;
 }
 
 class SubTitleTextStyle extends TextStyle {
-  const SubTitleTextStyle({super.color});
+  const SubTitleTextStyle({super.color, super.fontWeight});
 
   @override
-  FontWeight? get fontWeight => FontWeight.w400;
+  FontWeight? get fontWeight => super.fontWeight ?? FontWeight.w400;
 
   @override
   double? get fontSize => 14;
 
   @override
-  Color? get color => ColorConfig.kGray;
+  Color? get color => super.color ?? ColorConfig.kGray;
 }
